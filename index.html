@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Plano de Treino Pessoal Corpo Perfeito | FitNowPro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-left">
+            <button id="back-btn" class="icon-btn hide" title="Voltar">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18l-6-6 6-6" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="header-center">
+            <a href="#" class="logo">
+                <span class="logo-fit">FITNOW<span class="logo-pro">PRO</span></span>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <button class="lang-btn" id="lang-toggle">
+                    <span id="lang-label">Português</span>
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#B3B3B3" stroke-linecap="square" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="progress-container" id="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <main class="app-content">
+        <div class="background-wrapper"></div>
+        <div id="quiz-container" class="quiz-wrapper">
+            <!-- Dynamic Steps Injected Here -->
+        </div>
+
+        <!-- SPINNER PAGE -->
+        <div id="spin-page" class="checkout-wrapper hide">
+            <h2 class="wheel-title" style="margin-top: 40px; font-size: 28px;">Gire para ganhar até 90% de desconto!
+            </h2>
+            <div class="wheel-container" style="margin-top: 60px;">
+                <div class="wheel-pointer">▼</div>
+                <div class="wheel" id="spin-wheel">
+                    <div class="wheel-slice slice-1"><span>20%</span></div>
+                    <div class="wheel-slice slice-2"><span id="win-segment"
+                            style="color:var(--color-white); font-weight:900;">90%</span></div>
+                    <div class="wheel-slice slice-3"><span>10%</span></div>
+                    <div class="wheel-slice slice-4"><span>75%</span></div>
+                    <div class="wheel-slice slice-5"><span>15%</span></div>
+                    <div class="wheel-slice slice-6"><span>30%</span></div>
+                </div>
+            </div>
+            <button class="btn-primary" id="spin-btn">GIRAR A ROLETA</button>
+            <p id="spin-win-text" class="hide"
+                style="font-size:24px; font-weight:800; color:var(--color-primary); text-align:center; margin-top:32px;">
+                🎉 Você ganhou 90% de DESCONTO!</p>
+        </div>
+
+        <!-- FINAL DASHBOARD -->
+        <div id="final-dashboard" class="checkout-wrapper hide" style="max-width: 600px;">
+            <h1 class="checkout-title" id="checkout-title-text" style="font-size:36px; padding-top:24px;">Seu Resumo
+                Pessoal</h1>
+
+            <!-- Agora vs Seu Objetivo Grid -->
+            <div class="dashboard-compare-grid">
+                <div class="compare-header">
+                    <div class="col-head">Agora</div>
+                    <div class="col-head">Seu Objetivo</div>
+                </div>
+                <div class="compare-body">
+                    <!-- Row 1: Gordura -->
+                    <div class="compare-row">
+                        <div class="col-side">
+                            <span class="compare-label">Gordura corporal</span>
+                            <strong class="compare-val-red" id="val-fat-now">20-24%</strong>
+                        </div>
+                        <div class="col-side">
+                            <span class="compare-label">Gordura corporal</span>
+                            <strong class="compare-val-green" id="val-fat-target">15-17%</strong>
+                        </div>
+                    </div>
+                    <!-- Row 2: Idade Fisica -->
+                    <div class="compare-row">
+                        <div class="col-side">
+                            <span class="compare-label">Idade de condicionamento físico</span>
+                            <strong class="compare-val-red" id="val-age-now">--</strong>
+                        </div>
+                        <div class="col-side">
+                            <span class="compare-label">Idade de condicionamento físico</span>
+                            <strong class="compare-val-green" id="val-age-target">--</strong>
+                        </div>
+                    </div>
+                    <!-- Row 3: Musculos -->
+                    <div class="compare-row">
+                        <div class="col-side">
+                            <span class="compare-label">Músculos do corpo</span>
+                            <div class="muscle-bars">
+                                <span class="m-bar full"></span><span class="m-bar full"></span><span
+                                    class="m-bar empty"></span><span class="m-bar empty"></span><span
+                                    class="m-bar empty"></span>
+                            </div>
+                        </div>
+                        <div class="col-side">
+                            <span class="compare-label">Músculos do corpo</span>
+                            <div class="muscle-bars">
+                                <span class="m-bar full"></span><span class="m-bar full"></span><span
+                                    class="m-bar full"></span><span class="m-bar full"></span><span
+                                    class="m-bar full"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- O que vc recebe -->
+            <h2 class="dash-section-title">O que você recebe</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <strong>Um plano de exercícios estruturado</strong>
+                        <p>adaptados à sua idade, tipo de corpo e objetivos de bem-estar.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <strong>Plano de 15 a 30 minutos por dia</strong>
+                        <p>projetado para desenvolver músculos e perder peso.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                    </div>
+                    <div class="benefit-text">
+                        <strong>Passo a passo</strong>
+                        <p>abordagem adequada para iniciantes para obter resultados em semanas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="dash-section-subtitle">Os objetivos do seu programa também incluem:</h3>
+            <div class="goals-grid" id="goals-output">
+                <div><span class="check-circle">✔</span> Reduzir o estresse</div>
+                <div><span class="check-circle">✔</span> Sentir-se mais saudável</div>
+                <div><span class="check-circle">✔</span> Autodisciplina</div>
+                <div><span class="check-circle">✔</span> Melhorar o sono</div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="social-proof-box">
+                <div class="laurel-container">
+                    <svg class="laurel-leaf" viewBox="0 0 46 86" style="transform: scaleX(-1);">
+                        <path fill="var(--color-primary)"
+                            d="M43.3 26.6c-1.3-4.3-4.5-7.7-8.8-9.4-4.5-1.7-9.5-1.7-14.1 0C13 21 8.5 28.5 7.6 37.5c-1 8.8 2.3 17.6 8 23.9 6 6.7 15.6 9 24.3 6 4.6-1.6 8.5-4.8 11.2-8.9.7-1 1-2.2.8-3.4-.2-1.2-.9-2.3-1.9-2.9-1.9-1.2-4.5-.7-5.9 1-2.9 3.5-7.3 5.4-11.9 5.2-10-.6-17.7-9.3-17.1-19.3.6-9.1 8-15.6 16.7-15 3.9.3 7.5 1.8 10.3 4.2 1.6 1.4 4 1.4 5.6-.1 1.6-1.6 1.6-4-.1-5.6z" />
+                    </svg>
+                    <div class="laurel-text">
+                        <strong class="laurel-big">mais de 3<br>milhões</strong>
+                        <span class="laurel-sub">iniciaram sua jornada de condicionamento físico conosco</span>
+                    </div>
+                    <svg class="laurel-leaf" viewBox="0 0 46 86">
+                        <path fill="var(--color-primary)"
+                            d="M43.3 26.6c-1.3-4.3-4.5-7.7-8.8-9.4-4.5-1.7-9.5-1.7-14.1 0C13 21 8.5 28.5 7.6 37.5c-1 8.8 2.3 17.6 8 23.9 6 6.7 15.6 9 24.3 6 4.6-1.6 8.5-4.8 11.2-8.9.7-1 1-2.2.8-3.4-.2-1.2-.9-2.3-1.9-2.9-1.9-1.2-4.5-.7-5.9 1-2.9 3.5-7.3 5.4-11.9 5.2-10-.6-17.7-9.3-17.1-19.3.6-9.1 8-15.6 16.7-15 3.9.3 7.5 1.8 10.3 4.2 1.6 1.4 4 1.4 5.6-.1 1.6-1.6 1.6-4-.1-5.6z" />
+                    </svg>
+                </div>
+                <div class="stars-box">
+                    <div class="stars" style="color:#fbbf24; font-size:24px;">★★★★★ <span
+                            style="font-size:16px; color:var(--color-white);">4.7 de 5</span></div>
+                </div>
+                <h3 class="social-review-title">Mais de 200.000 avaliações 5 estrelas de usuários satisfeitos</h3>
+            </div>
+
+            <!-- List -->
+            <h2 class="dash-section-title">Plano de treino completo</h2>
+            <ul class="workout-plan-list">
+                <li><span class="check-square">✔</span>
+                    <p>Crie um hábito e desenvolva as técnicas corretas de exercícios</p>
+                </li>
+                <li><span class="check-square">✔</span>
+                    <p>Perda gordura corporal excessiva e melhore a intensidade do treino</p>
+                </li>
+                <li><span class="check-square">✔</span>
+                    <p>Alcance seu objetivo e mude sua vida para sempre</p>
+                </li>
+            </ul>
+
+            <!-- Pricing Box -->
+            <div class="pricing-section" id="pricing-anchor">
+                <div class="price-box">
+                    <span class="price-discount-badge" id="discount-badge">90% OFF APLICADO!</span>
+                    <div class="price-old" style="margin-top:16px;">De R$ 97,00</div>
+                    <div class="price-new">Por R$ 9,90</div>
+                    <p class="price-sub">apenas no primeiro mês, a partir do próximo fica R$27,00.</p>
+                </div>
+
+                <!-- Guarantee text -->
+                <div class="guarantees" style="margin-bottom:24px;">
+                    <div class="gt-item"
+                        style="display:flex; align-items:center; gap:8px; margin-bottom:12px; font-size:15px;"><span
+                            style="font-size:20px;">🛡️</span> Garantia incondicional de devolução do dinheiro em 7 dias
+                    </div>
+                    <div class="gt-item" style="display:flex; align-items:center; gap:8px; font-size:15px;"><span
+                            style="font-size:20px;">⚡</span> Comece a ver resultados a partir do 5º dia</div>
+                </div>
+
+                <a href="https://pay.hotmart.com/Y105066913S?checkoutMode=10&offDiscount=PRIMEIROMES" target="_blank"
+                    class="btn-primary pulse-btn btn-buy" style="margin-bottom: 64px;">OBTER MEU PLANO</a>
+            </div>
+
+        </div>
+
+        <!-- Sticky Button -->
+        <a href="#pricing-anchor" class="btn-primary sticky-buy-btn hide" id="sticky-btn">OBTER MEU PLANO</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
