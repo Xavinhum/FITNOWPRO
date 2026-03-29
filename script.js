@@ -713,7 +713,19 @@ class QuizEngine {
         }
     }
 
-    updateView(direction = 'next') {
+    updateView(direction = 'next') {   
+        // --- ADICIONE ESTE BLOCO DE CÓDIGO AQUI ---
+        // Ele vai forçar o gráfico a atualizar os valores com as respostas de peso digitadas
+        if (this.config[this.currentIndex].type === 'dynamic_chart') {
+            const stepId = `step-${this.currentIndex}`;
+            const stepElement = document.getElementById(stepId);
+            if (stepElement) {
+                stepElement.innerHTML = this.getStepHTML(this.config[this.currentIndex]);
+                this.bindStepEvents(stepElement, this.config[this.currentIndex], this.currentIndex);
+            }
+        }
+        // ------------------------------------------
+        
         const steps = this.container.querySelectorAll('.step-container');
         
         steps.forEach((el, index) => {
